@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, Observable} from "rxjs";
 import {CountryDTO} from "../interfaces/country.interface";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
     providedIn: 'root'
@@ -11,7 +12,7 @@ export class CountryService {
 
     private selectedTimezoneSubject = new BehaviorSubject<string | null>(null);
 
-    API_URL = 'http://localhost:8104/ally/api/v1/countries';
+    API_URL = environment.api_url + '/api/v1/countries';
 
     selectedCountry$ = this.selectedCountrySubject.asObservable();
 
