@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {interval, Subscription} from "rxjs";
+import {interval, Subject, Subscription, takeUntil} from "rxjs";
 import {CountryService} from "../../../../services/country.service";
 
 @Component({
@@ -12,26 +12,22 @@ export class SelectedCountryTimezoneSelectedTimeCardComponent implements OnInit,
     timezone: string | null = null;
     currentTime: string | null = null;
 
-    private sub = new Subscription();
+    private toDestroy$ = new Subject<void>();
 
     constructor(private countrySvc: CountryService) {
     }
 
 
     ngOnInit(): void {
-        this.sub.add(
-            this.countrySvc.selectedTimezone$.subscribe((tz) => {
-                this.timezone = tz;
+        this.countrySvc.selectedTimezone$.pipe(takeUntil(this.toDestroy$)).subscribe((tz) => {
+            this.timezone = tz;
+            this.updateTime();
+        });
+        interval(1000).pipe(takeUntil(this.toDestroy$)).subscribe(() => {
+            if (this.timezone) {
                 this.updateTime();
-            })
-        );
-        this.sub.add(
-            interval(1000).subscribe(() => {
-                if (this.timezone) {
-                    this.updateTime();
-                }
-            })
-        );
+            }
+        });
     }
 
     updateTime(): void {
@@ -44,6 +40,8 @@ export class SelectedCountryTimezoneSelectedTimeCardComponent implements OnInit,
     }
 
     ngOnDestroy(): void {
-        this.sub.unsubscribe();
+        this.toDestroy$.next();
+        this.toDestroy$.complete();
+        this.toDestroy$.unsubscribe();
     }
 }

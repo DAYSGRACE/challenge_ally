@@ -1,0 +1,21 @@
+.selected_weather {
+  display: flex;
+
+  img {
+    min-width: 100px;
+    max-width: 150px;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    justify-content: center;
+    line-height: 1.5rem;
+    flex-grow: 1;
+
+    p {
+      margin: 0;
+    }
+  }
+}

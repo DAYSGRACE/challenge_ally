@@ -3,10 +3,10 @@
         <span class="text-blue-700 font-semibold">Otras tareas</span>
     </div>
     <div card-body>
-        <ul class="list-disc list-inside space-y-1 text-sm">
-            <li>Realizar documentación en Swagger</li>
-            <li>Tomar curso React</li>
-            <li>Estudiar SpringBoot</li>
+        <ul class="">
+            <li *ngFor="let todo of todos">
+                {{ todo.name }}
+            </li>
         </ul>
     </div>
 </app-card-generic>

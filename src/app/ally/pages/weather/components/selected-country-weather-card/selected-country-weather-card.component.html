@@ -1,14 +1,16 @@
-<app-card-generic>
+<app-card-generic [isLoading]="isLoading">
     <div card-header>
         CLIMA
     </div>
-    <div card-body>
-        <div class="flex items-center gap-3">
-            <img src="assets/icons/weather-partly-cloudy.svg" alt="Clima" width="32" />
-            <div>
-                <div class="text-lg font-semibold">18° C</div>
-                <div class="text-sm text-gray-500">Partly cloudy</div>
-            </div>
+    <div card-body *ngIf="weatherSummary" class="selected_weather">
+        <img [src]="weatherSummary.conditionIcon" alt="Clima" class="selected_weather-icon"/>
+        <div class="selected_weather-info">
+            <p>{{ weatherSummary.temperatureInC }}</p>
+            <p>{{ weatherSummary.conditionText }}</p>
         </div>
+
+    </div>
+    <div card-body *ngIf="!weatherSummary">
+        <p class="weather-loading">Selecciona un país para ver el clima</p>
     </div>
 </app-card-generic>
