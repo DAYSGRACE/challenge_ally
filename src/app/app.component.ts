@@ -7,7 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'challenge_ally';
-  ngOnInit() {
-    console.log(process.env)
-  }
+
 }
