@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {AllyRoutes} from "../../ally.routes";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-home',
@@ -12,6 +13,14 @@ export class HomeComponent {
         {name: 'Weather', path: AllyRoutes.ROUTES.Weather.path},
         {name: 'Users', path: AllyRoutes.ROUTES.Users.path},
     ];
+
+    constructor(private router: Router) {
+    }
+
+    logout(): void {
+        localStorage.removeItem('token');
+        this.router.navigate(['/']);
+    }
 }
 
 

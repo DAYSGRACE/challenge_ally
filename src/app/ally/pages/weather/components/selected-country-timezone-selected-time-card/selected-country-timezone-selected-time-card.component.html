@@ -3,12 +3,12 @@
         Hora
     </div>
     <div card-body *ngIf="timezone && currentTime">
-        <div class="text-sm">
+        <div class="">
             {{ currentTime }}<br />
             <strong>{{ timezone }}</strong>
         </div>
     </div>
     <div card-body *ngIf="!timezone">
-        <p class="text-sm text-gray-500">Seleccioná una zona horaria para ver la hora.</p>
+        <p class="">Seleccioná una zona horaria para ver la hora.</p>
     </div>
 </app-card-generic>

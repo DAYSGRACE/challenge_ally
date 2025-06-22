@@ -2,10 +2,15 @@
     <div card-header>
         PAÍS SELECCIONADO
     </div>
-    <div *ngIf="!isLoading" card-body>
-        <p>{{ country.name }}</p>
-        <p>Capital: {{ country.capital }}</p>
-        <p>Región: {{ country.region }}</p>
-        <p>Latitud: {{ country.lat }} Longitud: {{ country.lon }}</p>
+    <div card-body>
+        <div *ngIf="countryInfo">
+            <p>{{ countryInfo.country }}</p>
+            <p>Capital: {{ countryInfo.capital }}</p>
+            <p>Región: {{ countryInfo.region }}</p>
+            <p>Latitud: {{ countryInfo.lat }} Longitud: {{ countryInfo.lon }}</p>
+        </div>
+    </div>
+    <div *ngIf="!countryInfo" card-body >
+        <p class="weather-loading">Selecciona un país para ver su información</p>
     </div>
 </app-card-generic>

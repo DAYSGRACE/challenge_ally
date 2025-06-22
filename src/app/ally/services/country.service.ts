@@ -19,6 +19,8 @@ export class CountryService {
     selectedTimezone$ = this.selectedTimezoneSubject.asObservable();
 
     setSelectedCountry(country: CountryDTO): void {
+        const curr = this.selectedCountrySubject.getValue();
+        if (curr?.name === country.name) return;
         this.selectedCountrySubject.next(country);
     }
 

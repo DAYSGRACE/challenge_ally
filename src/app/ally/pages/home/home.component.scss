@@ -8,6 +8,8 @@
   display: flex;
 
   .sidenav {
+    display: flex;
+    flex-direction: column;
     background: #41494d;
     min-width: 200px;
     padding: 0 .5rem;
@@ -42,6 +44,13 @@
 
         }
       }
+    }
+    .actions {
+      flex-grow: 1;
+      justify-content: flex-end;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 0;
     }
   }
 }

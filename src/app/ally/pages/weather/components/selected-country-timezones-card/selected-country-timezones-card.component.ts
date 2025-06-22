@@ -16,6 +16,9 @@ export class SelectedCountryTimezonesCardComponent implements OnInit {
     ngOnInit(): void {
         this.countrySvc.selectedCountry$.subscribe((country) => {
             this.selectedCountry = country;
+            if (country) {
+                this.selectTimezone(country.timezones[0].timezone);
+            }
         });
     }
 
