@@ -1,0 +1,11 @@
+<app-card-generic [isLoading]="this.isLoading">
+    <div card-header>
+        PAÍS SELECCIONADO
+    </div>
+    <div *ngIf="!isLoading" card-body>
+        <p>{{ country.name }}</p>
+        <p>Capital: {{ country.capital }}</p>
+        <p>Región: {{ country.region }}</p>
+        <p>Latitud: {{ country.lat }} Longitud: {{ country.lon }}</p>
+    </div>
+</app-card-generic>

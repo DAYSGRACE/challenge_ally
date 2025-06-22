@@ -1,0 +1,54 @@
+:host {
+  min-height: 100vh;
+  display: flex;
+}
+
+.layout {
+  flex-grow: 1;
+  display: flex;
+
+  .sidenav {
+    background: #41494d;
+    min-width: 200px;
+    padding: 0 .5rem;
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+
+      &-item {
+        padding: .5rem .75rem;
+        position: relative;
+        border: 1px solid #2674ad;
+        transition: background-color 300ms;
+        &:hover {
+          background: #2674ad;
+          a {
+            color: white;
+          }
+        }
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+
+          line-height: 1.2rem;
+          text-decoration: none;
+          color: #2674ad;
+          &:visited {
+            text-decoration: none;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+.main-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%
+}
