@@ -39,9 +39,8 @@ pre {
 }
 
 a {
-
+  color: #2674ad;
   background-color: transparent;
-
 }
 
 abbr[title] {
@@ -253,4 +252,42 @@ template {
 
   display: none;
 
+}
+
+
+.fieldset {
+  margin: 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+
+  &_input {
+    border: solid 2px #dfe4e8;
+    background-color: #e7eefd;
+    border-radius: .5rem;
+    min-height: 1.85rem;
+    padding: .5rem;
+    font-size: 1rem;
+
+    &:focus, :active {
+      border-color: #bcd4fe;
+      outline: 0 none;
+    }
+  }
+}
+
+.generic-button {
+  border: 1px solid #3f2ff0;
+  width: 100%;
+  border-radius: .5rem;
+  padding: .85rem .5rem;
+  background: #0260f0;
+  color: #fff;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+  }
 }

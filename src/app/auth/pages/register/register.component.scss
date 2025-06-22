@@ -1,0 +1,18 @@
+.register_passwords {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.action_container {
+  padding: 0.35em 0.75em 0.625em;
+  &-button {
+    border: 1px solid #3f2ff0;
+    width: 100%;
+    border-radius: .5rem;
+    padding: .5rem;
+    background: #0260f0;
+    color: #fff;
+    cursor: pointer;
+  }
+}

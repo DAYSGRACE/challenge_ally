@@ -1,0 +1,15 @@
+<app-card-generic>
+    <div card-header>
+        Zonas horarias disponibles
+    </div>
+    <div card-body *ngIf="selectedCountry">
+        <ul class="space-y-1 text-sm text-blue-600 underline">
+            <li (click)="selectTimezone(tz.timezone)" *ngFor="let tz of selectedCountry.timezones">
+                {{ tz.timezone }}
+            </li>
+        </ul>
+    </div>
+    <div card-body *ngIf="!selectedCountry">
+        <p class="text-gray-500 text-sm">Seleccioná un país para ver las zonas horarias.</p>
+    </div>
+</app-card-generic>

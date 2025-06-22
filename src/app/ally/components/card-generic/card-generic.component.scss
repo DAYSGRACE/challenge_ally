@@ -1,0 +1,41 @@
+.card {
+  background-color: white;
+  border-radius: .35rem;
+  box-shadow: 0 3px 12px rgba(0, 10, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  background: #f6f6f6;
+  color: #2674ad;
+  padding: 0.75rem 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-bottom: #ececec solid 1px;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.skeleton-line {
+  height: 14px;
+  background-color: #e0e0e0;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}

@@ -1,0 +1,22 @@
+<section class="users">
+    <h1 class="">
+        Usuarios
+    </h1>
+    <app-table-generic
+            [columns]="['Nombre', 'Email', 'Fecha Registro', 'Último login']"
+            [data]="this.users"
+            [isLoading]="isLoading"
+            [totalItems]="totalItems"
+            [pageSize]="pageSize"
+            (pageChange)="onPageChange($event)"
+    >
+        <ng-template #cell let-item let-i="index">
+            <td>{{ item.name }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.created | dateOffSet }}</td>
+            <td>{{ item.lastLogin | dateOffSet }}</td>
+        </ng-template>
+
+    </app-table-generic>
+
+</section>

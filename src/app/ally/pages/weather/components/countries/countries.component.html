@@ -1,0 +1,13 @@
+<app-card-generic [isLoading]="isLoading">
+    <div card-header>
+        Países disponibles
+    </div>
+    <div card-body>
+        <ul class="space-y-2">
+            <li (click)="selectCountry(country)" *ngFor="let country of countries" class="flex items-center gap-2">
+                <img [src]="country.flag" [alt]="country.name" width="24" />
+                <span>{{ country.name }}</span>
+            </li>
+        </ul>
+    </div>
+</app-card-generic>

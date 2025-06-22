@@ -1,0 +1,23 @@
+<app-form-generic [formGroup]="loginForm">
+    <span formTitle>Login</span>
+
+    <ng-container formBody>
+        <fieldset class="fieldset">
+            <label for="email" class="fieldset_label">Email</label>
+            <input formControlName="email" id="email" type="email" class="fieldset_input">
+        </fieldset>
+
+        <fieldset class="fieldset">
+            <label for="password" class="fieldset_label">Contraseña</label>
+            <input formControlName="password" id="password" type="password" class="fieldset_input">
+        </fieldset>
+
+        <div class="action_container">
+            <button (click)="sendForm()" [disabled]="!loginForm.valid || isLoading" type="submit" class="generic-button">Login</button>
+        </div>
+    </ng-container>
+
+    <ng-container formFooter>
+        <a routerLink="/auth/register">¿Necesitas una cuenta? Registrate</a>
+    </ng-container>
+</app-form-generic>

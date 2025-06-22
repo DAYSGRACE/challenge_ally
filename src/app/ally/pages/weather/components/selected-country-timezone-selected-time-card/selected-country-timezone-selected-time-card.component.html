@@ -1,0 +1,14 @@
+<app-card-generic>
+    <div card-header>
+        Hora
+    </div>
+    <div card-body *ngIf="timezone && currentTime">
+        <div class="text-sm">
+            {{ currentTime }}<br />
+            <strong>{{ timezone }}</strong>
+        </div>
+    </div>
+    <div card-body *ngIf="!timezone">
+        <p class="text-sm text-gray-500">Seleccioná una zona horaria para ver la hora.</p>
+    </div>
+</app-card-generic>

@@ -1,0 +1,36 @@
+<app-form-generic [formGroup]="registerForm">
+    <span formTitle>Crear Cuenta</span>
+    <ng-container formBody>
+        <fieldset class="fieldset">
+            <label for="name" class="fieldset_label">Nombre</label>
+            <input formControlName="name" id="name" type="text" class="fieldset_input">
+        </fieldset>
+
+        <div class="register_passwords">
+            <fieldset class="fieldset">
+                <label for="password" class="fieldset_label">Contraseña</label>
+                <input formControlName="password" id="password" type="password" class="fieldset_input">
+            </fieldset>
+            <fieldset class="fieldset">
+                <label for="repeat_password" class="fieldset_label">Confirmar Contraseña</label>
+                <input formControlName="repeat_password" id="repeat_password" type="password" class="fieldset_input">
+            </fieldset>
+        </div>
+
+        <fieldset class="fieldset">
+            <label for="email" class="fieldset_label">Email</label>
+            <input formControlName="email" id="email" type="email" class="fieldset_input">
+        </fieldset>
+
+        <div class="action_container">
+            <button (click)="sendForm()" [disabled]="!registerForm.valid || isLoading" type="submit" class="generic-button">Crear
+                Cuenta
+            </button>
+        </div>
+        <span *ngIf="showError" class="message_error">Las credenciales son invalidas</span>
+    </ng-container>
+
+    <ng-container formFooter>
+        <a routerLink="/auth/login">¿Ya tienes una cuenta? Inicia sesión</a>
+    </ng-container>
+</app-form-generic>

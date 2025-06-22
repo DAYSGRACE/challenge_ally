@@ -1,0 +1,16 @@
+<div class="layout">
+    <nav class="sidenav">
+        <h3>Ally Challenge</h3>
+        <div class="sidenav__list">
+            <div *ngFor="let link of navLinks" class="sidenav__list-item">
+                <a [routerLink]="link.path" routerLinkActive="active">
+                    {{ link.name }}
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <router-outlet></router-outlet>
+    </main>
+</div>

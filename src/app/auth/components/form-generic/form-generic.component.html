@@ -1,0 +1,21 @@
+<form [formGroup]="formGroup" class="form-generic" (ngSubmit)="formGroup.valid">
+    <div class="form-generic__header">
+        <div class="header_container">
+            <h2 class="header_container-title">
+                <ng-content select="[formTitle]"></ng-content>
+            </h2>
+        </div>
+    </div>
+
+    <div class="form-generic__body">
+        <div class="body_container">
+            <ng-content select="[formBody]"></ng-content>
+        </div>
+    </div>
+
+    <footer class="form-generic__footer">
+        <div class="footer_container">
+            <ng-content select="[formFooter]"></ng-content>
+        </div>
+    </footer>
+</form>
