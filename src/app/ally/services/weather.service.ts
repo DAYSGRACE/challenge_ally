@@ -14,7 +14,7 @@ export class WeatherService {
 
     currentCountryInfo$: Observable<WeatherSummary | null> = this.currentCountryInfo.asObservable();
 
-    WEATHER_API_URL = 'http://api.weatherapi.com/v1/current.json';
+    WEATHER_API_URL = 'https://api.weatherapi.com/v1/current.json';
 
     constructor(private readonly httpClient: HttpClient) {
     }
