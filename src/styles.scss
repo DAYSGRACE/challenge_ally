@@ -291,3 +291,14 @@ template {
     cursor: not-allowed;
   }
 }
+
+.input-error {
+  border-color: #d72828;
+  &:focus {
+    border-color: #d72828;
+  }
+}
+
+.message_error {
+  color: #d72828;
+}
